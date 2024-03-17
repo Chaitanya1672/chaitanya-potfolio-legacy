@@ -20,8 +20,14 @@ export const Projects = [
   {
     title: "Binary Tree Visualizer",
     imageSrc: "Images/projects/tree_visualizer_image.png",
-    githubLink: "https://github.com/Chaitanya1672/openboard",
-    liveDemoLink: "https://openboard-project.vercel.app/"
+    githubLink: "https://github.com/Chaitanya1672/dsa-tree-visualizer",
+    liveDemoLink: "https://symphonious-gumdrop-25af66.netlify.app/"
+  },
+  {
+    title: "Chaitanya Portfolio",
+    imageSrc: "Images/projects/chaitanya-portfolio.jpg",
+    githubLink: "https://github.com/Chaitanya1672/spaceportfolio",
+    liveDemoLink: "https://spaceportfolio-alpha.vercel.app/"
   },
   {
     title: "Space Theme Portfolio",
