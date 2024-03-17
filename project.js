@@ -1,6 +1,9 @@
-import { Projects } from "./constants.js";
+import { Projects, FrontEndImages, BackEndImages, Others } from "./constants.js";
 
 const projectsContainer = document.getElementById("projectsContainer");
+const frontEndLngLogos = document.querySelector(".front-end");
+const backEndLngLogos = document.querySelector(".back-end");
+const otherTechnologiesLogos = document.querySelector(".others");
 
 Projects.forEach((project) => {
   const projectCard = createProjectCard(project);
@@ -53,3 +56,27 @@ function createButton(label, link) {
 
   return button;
 }
+
+FrontEndImages.forEach(imageName => {
+  const img = document.createElement("img");
+  img.src = `Images/skills/${imageName}`;
+  img.alt = imageName.replace(/\.(png|webp|svg)$/, "");
+  img.title = imageName.replace(/\.(png|webp|svg)$/, "");
+  frontEndLngLogos.appendChild(img);
+});
+
+BackEndImages.forEach(imageName => {
+  const img = document.createElement("img");
+  img.src = `Images/skills/${imageName}`;
+  img.alt = imageName.replace(/\.(png|webp|svg)$/, "");
+  img.title = imageName.replace(/\.(png|webp|svg)$/, "");
+  backEndLngLogos.appendChild(img);
+});
+
+Others.forEach(imageName => {
+  const img = document.createElement("img");
+  img.src = `Images/skills/${imageName}`;
+  img.alt = imageName.replace(/\.(png|webp|svg)$/, "");
+  img.title = imageName.replace(/\.(png|webp|svg)$/, "");
+  otherTechnologiesLogos.appendChild(img);
+});
