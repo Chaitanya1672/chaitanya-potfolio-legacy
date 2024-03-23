@@ -128,7 +128,9 @@ body {
   }
 }
 
-#dynamic-text {
+#dynamic-text,
+.intro-skills
+{
   color: #4caf50;
 }
 

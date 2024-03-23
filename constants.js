@@ -21,7 +21,7 @@ export const Projects = [
     title: "Binary Tree Visualizer",
     imageSrc: "Images/projects/tree_visualizer_image.png",
     githubLink: "https://github.com/Chaitanya1672/dsa-tree-visualizer",
-    liveDemoLink: "https://symphonious-gumdrop-25af66.netlify.app/"
+    liveDemoLink: "https://binary-tree-visualiser.netlify.app/"
   },
   {
     title: "Chaitanya Portfolio",
