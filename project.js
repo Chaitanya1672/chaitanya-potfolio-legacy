@@ -5,6 +5,7 @@ const profProjectsContainer = document.getElementById("prof-projectsContainer");
 const frontEndLngLogos = document.querySelector(".front-end");
 const backEndLngLogos = document.querySelector(".back-end");
 const otherTechnologiesLogos = document.querySelector(".others");
+const form = document.getElementById('myForm');
 
 const loadMoreButton = document.querySelector('#load-more-button')
 let projectsToShow = 6;
@@ -28,6 +29,27 @@ loadMoreButton.addEventListener("click", () => {
   console.log(projectsToShow >= Projects.length)
   if (projectsToShow >= Projects.length) loadMoreButton.style.display = "none"
   renderProjects();
+});
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  const formData = new FormData(form);
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    form.reset();
+    alert("Thank you for contacting me, I will surely get back you")
+  })
+  .catch(error => {
+    alert('Something went wrong, please fill the form again!')
+    console.error('Form submission error:', error);
+  });
 });
 
 function createProjectCard(project, isProfProject) {
