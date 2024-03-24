@@ -44,7 +44,7 @@ form.addEventListener('submit', function(event) {
   .then(response => response.json())
   .then(data => {
     form.reset();
-    alert("Thank you for contacting me, I will surely get back you")
+    alert("Thank you for contacting me, I will surely get back to you")
   })
   .catch(error => {
     alert('Something went wrong, please fill the form again!')
