@@ -288,6 +288,23 @@ hr{
   margin-bottom: 30px;
 }
 
+.profProject {
+  margin: 0 30px;
+  text-align: left;
+  margin-bottom: 30px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 300px;
+}
+
+.profProject img {
+  width: 300px;
+  height: 150px;
+  border-radius: 8px;
+}
+
 .project img {
   width: 300px;
   height: 150px;
@@ -334,6 +351,10 @@ hr{
 .live-demo a {
   text-decoration: none;
   color: #fff;
+}
+
+.small-description {
+  font-size: 13px;
 }
 
 /*-------------------------------- Contact Me --------------------------------------*/

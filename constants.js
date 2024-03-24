@@ -35,7 +35,44 @@ export const Projects = [
     githubLink: "https://github.com/Chaitanya1672/spaceportfolio",
     liveDemoLink: "https://spaceportfolio-alpha.vercel.app/"
   },
+  {
+    title: "Audio Wavw Analyser",
+    imageSrc: "Images/projects/audio-visualiser-preview.png",
+    githubLink: "https://github.com/Chaitanya1672/web-audiowave-analyzer",
+    liveDemoLink: "https://web-audiowave-analyzer.netlify.app/"
+  },
 ];
+
+export const ProfessionalProjects = [
+  {
+    title: "Engagement Project",
+    imageSrc: "Images/professional/atrium-project-preview.jpg",
+    description: `Atrium Engagement is an auditing tool for their internal employees by
+    US laws. The primary goal of the project was to evaluate the employees
+    of clients & facilitated client employee data management with role-based access control
+    and an approval system for evaluation requests`,
+    role: "MERN Developer",
+    tech: ["React Js", "Node js", "MongoDB", "Express"]
+  },
+  {
+    title: "GK Web 360",
+    imageSrc: "Images/professional/gk-web-360.jpg",
+    description: `GK Web 360 is a SaaS platform transforming cafeteria operations by digitizing orders
+    . Its admin dashboard offers sales analytics, review and event management, 
+    catering to vendors, outlets, corporate managers, and more.`,
+    role: "Next + Node Developer",
+    tech: ["Next Js", "Node js", "Express", "MongoDB", "Mongoose", "MUI", "Redux-Toolkit"]
+  },
+  {
+    title: "ECamp Project",
+    imageSrc: "Images/professional/ecamp-project-preview.jpg",
+    description: ` Next.js and Nest.js-based Content Management System (CMS). Built 
+    with Redux Toolkit & MUI, it empowers administrators to efficiently manage data across 
+    multiple screens, facilitating seamless CRUD operations.`,
+    role: "Next + Nest Developer",
+    tech: ["Next Js", "Node js", "Nest Js", "Postgress", "TypeORM", "MUI", "Redux-Toolkit"]
+  },
+]
 
 export const FrontEndImages = [
   "next.png",

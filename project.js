@@ -1,18 +1,39 @@
-import { Projects, FrontEndImages, BackEndImages, Others } from "./constants.js";
+import { Projects, FrontEndImages, BackEndImages, Others, ProfessionalProjects } from "./constants.js";
 
 const projectsContainer = document.getElementById("projectsContainer");
+const profProjectsContainer = document.getElementById("prof-projectsContainer");
 const frontEndLngLogos = document.querySelector(".front-end");
 const backEndLngLogos = document.querySelector(".back-end");
 const otherTechnologiesLogos = document.querySelector(".others");
 
-Projects.forEach((project) => {
+const loadMoreButton = document.querySelector('#load-more-button')
+let projectsToShow = 6;
+let profProjectsToShow = 6;
+
+Projects.slice(0, projectsToShow).forEach((project) => {
+  if (projectsToShow >= Projects.length) loadMoreButton.style.display = "none"
   const projectCard = createProjectCard(project);
   projectsContainer.appendChild(projectCard);
 });
 
-function createProjectCard(project) {
+ProfessionalProjects.slice(0, profProjectsToShow).forEach((project) => {
+  if (profProjectsToShow >= Projects.length) loadMoreButton.style.display = "none"
+  const projectCard = createProjectCard(project, true);
+  profProjectsContainer.appendChild(projectCard);
+});
+
+loadMoreButton.addEventListener("click", () => {
+  projectsToShow += 3;
+  console.log('loadmore clicked')
+  console.log(projectsToShow >= Projects.length)
+  if (projectsToShow >= Projects.length) loadMoreButton.style.display = "none"
+  renderProjects();
+});
+
+function createProjectCard(project, isProfProject) {
   const projectDiv = document.createElement("div");
-  projectDiv.classList.add("project");
+  if(isProfProject) projectDiv.classList.add("profProject");
+  else projectDiv.classList.add("project");
 
   const image = document.createElement("img");
   image.src = project.imageSrc;
@@ -22,15 +43,30 @@ function createProjectCard(project) {
   title.classList.add("title");
   title.textContent = project.title;
 
-  const buttonsContainer = document.createElement("div");
-  buttonsContainer.classList.add("buttons-container");
+  if (isProfProject) {
+    const description = document.createElement("div");
+    const descSpan = document.createElement('span')
+    descSpan.classList.add("small-description")
+    descSpan.textContent = project.description
+    description.append(descSpan)
+    if (project.role) {
+      description.innerHTML += "<br><br>Role: " + project.role;
+    }
+    if (project.tech && project.tech.length > 0) {
+      const skillsText = project.tech.join(" | ");
+      description.innerHTML += "<br>Tech: " + skillsText;
+    }
+    projectDiv.append(image, title, description);
+  } else {
+    const buttonsContainer = document.createElement("div");
+    buttonsContainer.classList.add("buttons-container");
+    const githubButton = createButton("Github", project.githubLink);
+    const liveDemoButton = createButton("Live Demo", project.liveDemoLink);
+    buttonsContainer.append(githubButton, liveDemoButton);
+  
+    projectDiv.append(image, title, buttonsContainer);
+  }
 
-  const githubButton = createButton("Github", project.githubLink);
-  const liveDemoButton = createButton("Live Demo", project.liveDemoLink);
-
-  buttonsContainer.append(githubButton, liveDemoButton);
-
-  projectDiv.append(image, title, buttonsContainer);
 
   return projectDiv;
 }
@@ -55,6 +91,15 @@ function createButton(label, link) {
   button.appendChild(anchor);
 
   return button;
+}
+
+function renderProjects() {
+  console.log('render clicked');
+  projectsContainer.innerHTML = "";
+  Projects.slice(0, projectsToShow).forEach((project) => {
+    const projectCard = createProjectCard(project);
+    projectsContainer.appendChild(projectCard);
+  });
 }
 
 FrontEndImages.forEach(imageName => {
