@@ -1,4 +1,4 @@
-const dynamicTexts = [" Technology Enthusiast", " Full-Stack Developer (MERN)"];
+import { DynamicTexts } from "./constants.js";
 let dynamicTextIndex = 0;
 let dynamicTextElement = document.getElementById("dynamic-text");
 
@@ -8,7 +8,7 @@ function toggleThemeIcon() {
 }
 
 function typeDynamicText() {
-  let currentText = dynamicTexts[dynamicTextIndex];
+  let currentText = DynamicTexts[dynamicTextIndex];
   let currentIndex = 0;
 
   function typeCharacter() {
@@ -29,7 +29,7 @@ function typeDynamicText() {
       );
       setTimeout(eraseDynamicText, 50);
     } else {
-      dynamicTextIndex = (dynamicTextIndex + 1) % dynamicTexts.length;
+      dynamicTextIndex = (dynamicTextIndex + 1) % DynamicTexts.length;
       setTimeout(typeDynamicText, 200);
     }
   }

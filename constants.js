@@ -1,3 +1,5 @@
+export const DynamicTexts = [ " Full-Stack Developer (MERN)", " Technology Enthusiast" ];
+
 export const Projects = [
   {
     title: "Thread's Clone Website",
@@ -36,10 +38,16 @@ export const Projects = [
     liveDemoLink: "https://spaceportfolio-alpha.vercel.app/"
   },
   {
-    title: "Audio Wavw Analyser",
+    title: "Audio Wave Analyser",
     imageSrc: "Images/projects/audio-visualiser-preview.png",
     githubLink: "https://github.com/Chaitanya1672/web-audiowave-analyzer",
     liveDemoLink: "https://web-audiowave-analyzer.netlify.app/"
+  },
+  {
+    title: "Camera Gallery",
+    imageSrc: "Images/projects/camera-gallery.png",
+    githubLink: "https://github.com/Chaitanya1672/camera-gallery-project",
+    liveDemoLink: "https://camera-gallery-project.vercel.app/"
   },
 ];
 
@@ -52,10 +60,10 @@ export const ProfessionalProjects = [
     of clients & facilitated client employee data management with role-based access control
     and an approval system for evaluation requests`,
     role: "MERN Developer",
-    tech: ["React Js", "Node js", "MongoDB", "Express"]
+    tech: ["React Js", "Node js", "MongoDB", "Express", "AWS"]
   },
   {
-    title: "GK Web 360",
+    title: "GW 360",
     imageSrc: "Images/professional/gk-web-360.jpg",
     description: `GK Web 360 is a SaaS platform transforming cafeteria operations by digitizing orders
     . Its admin dashboard offers sales analytics, review and event management, 
