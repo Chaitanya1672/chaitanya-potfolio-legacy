@@ -104,7 +104,7 @@ export const FrontEndImages = [
 
 export const BackEndImages = [
   "node-js.png",
-  "express.png",
+  "Express.png",
   "Nest Js.png",
   "mongodb.png",
   "mysql.png",
