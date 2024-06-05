@@ -1,4 +1,4 @@
-import { Projects, FrontEndImages, BackEndImages, Others, ProfessionalProjects } from "./constants.js";
+import { Projects, FrontEndImages, BackEndImages, Others, ProfessionalProjects, projectsToShow as prjShowCount, profProjectsToShow as profPrjShowCount, prjIncreaseByCount } from "./constants.js";
 
 const projectsContainer = document.getElementById("projectsContainer");
 const profProjectsContainer = document.getElementById("prof-projectsContainer");
@@ -8,8 +8,9 @@ const otherTechnologiesLogos = document.querySelector(".others");
 const form = document.getElementById('myForm');
 
 const loadMoreButton = document.querySelector('#load-more-button')
-let projectsToShow = 6;
-let profProjectsToShow = 6;
+const showLessButton = document.querySelector('#show-less-button')
+let projectsToShow = prjShowCount;
+let profProjectsToShow = profPrjShowCount;
 
 Projects.slice(0, projectsToShow).forEach((project) => {
   if (projectsToShow >= Projects.length) loadMoreButton.style.display = "none"
@@ -17,17 +18,29 @@ Projects.slice(0, projectsToShow).forEach((project) => {
   projectsContainer.appendChild(projectCard);
 });
 
-ProfessionalProjects.slice(0, profProjectsToShow).forEach((project) => {
-  if (profProjectsToShow >= Projects.length) loadMoreButton.style.display = "none"
-  const projectCard = createProjectCard(project, true);
-  profProjectsContainer.appendChild(projectCard);
-});
+
+// Commented for time being
+// ProfessionalProjects.slice(0, profProjectsToShow).forEach((project) => {
+//   if (profProjectsToShow >= Projects.length) loadMoreButton.style.display = "none"
+//   const projectCard = createProjectCard(project, true);
+//   profProjectsContainer.appendChild(projectCard);
+// });
 
 loadMoreButton.addEventListener("click", () => {
-  projectsToShow += 3;
-  console.log('loadmore clicked')
-  console.log(projectsToShow >= Projects.length)
-  if (projectsToShow >= Projects.length) loadMoreButton.style.display = "none"
+  projectsToShow += prjIncreaseByCount;
+  if (projectsToShow >= Projects.length) {
+    loadMoreButton.style.display = "none"
+    showLessButton.style.display = "block"
+  }
+  renderProjects();
+});
+
+showLessButton.addEventListener("click", () => {
+  projectsToShow = prjShowCount;
+  if (projectsToShow <= 6) {
+    loadMoreButton.style.display = "block"
+    showLessButton.style.display = "none"
+  }
   renderProjects();
 });
 
@@ -116,7 +129,6 @@ function createButton(label, link) {
 }
 
 function renderProjects() {
-  console.log('render clicked');
   projectsContainer.innerHTML = "";
   Projects.slice(0, projectsToShow).forEach((project) => {
     const projectCard = createProjectCard(project);

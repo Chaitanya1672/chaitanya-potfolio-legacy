@@ -1,5 +1,7 @@
 export const DynamicTexts = [ " Full-Stack Developer (MERN)", " Technology Enthusiast" ];
-
+export const projectsToShow = 5;
+export const profProjectsToShow = 5;
+export const prjIncreaseByCount = 3;
 export const Projects = [
   {
     title: "Thread's Clone Website",
@@ -83,40 +85,42 @@ export const ProfessionalProjects = [
 ]
 
 export const FrontEndImages = [
-  "next.png",
-  "react.png",
-  "redux.png",
+  "Next.png",
+  "React.png",
+  "Redux.png",
   "Typescript.png",
   "JavaScript.png",
-  "reactquery.svg",
-  "mui.png",
-  "tailwind.png",
+  "Reactquery.svg",
+  "Mui.png",
+  "Tailwind.png",
   "Bootstrap.png",
-  "html.png",
+  "HTML.png",
   "CSS.png",
-  "figma.png",
-  "framer.png",
-  "graphql.png",
-  // "tauri.svg",
+  "Figma.png",
+  "Framer.png",
+  "Graphql.png",
+  // "Tauri.svg",
 ]
 
 export const BackEndImages = [
-  "node-js.png",
-  "express.png",
+  "Node-js.png",
+  "Express.png",
   "Nest Js.png",
-  "mongodb.png",
-  "mysql.png",
+  "Mongodb.png",
+  "Mysql.png",
   "Typescript.png",
   "Firebase.png",
-  // "graphql.png",
-  "prisma.webp",
-  // "stripe.webp",
-  // "tauri.svg",
-  "webhook.svg",
+  // "Graphql.png",
+  "Prisma.webp",
+  // "Stripe.webp",
+  // "Tauri.svg",
+  "Webhook.svg",
 ]
 
 export const Others = [
+  "Docker.svg",
+  "AWS.svg",
   "Github.png",
   "Gitlab.png",
-  "Bitbucket.webp"
+  "Bitbucket.webp",
 ]
