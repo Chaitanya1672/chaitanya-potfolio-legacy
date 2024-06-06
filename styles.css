@@ -256,9 +256,77 @@ hr{
   opacity: 1;
 }
 
-/*----------------------------------------- Projects Section -----------------------------------*/
+/*----------------------------------------- Experience Section -----------------------------------*/
 
-/* Add this to your existing styles */
+.section-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+
+.experience-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+}
+.experience-container {
+  font-size: 1.1em;
+}
+
+.experience {
+  margin-bottom: 50px;
+  width: 80%;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+
+.experience-item {
+  margin-bottom: 20px;
+}
+
+.experience-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #4caf50;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.experience-company,
+.experience-date {
+  
+  color: #888;
+  margin-bottom: 5px;
+}
+.experience-date {
+  color: #fff;
+}
+.experience-highlights {
+  list-style: none;
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.experience-highlights li {
+  margin-bottom: 5px;
+}
+
+/*----------------------------------------- Projects Section -----------------------------------*/
 
 .projects {
   display: flex;
@@ -277,7 +345,7 @@ hr{
 .projects-container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 100%;
+  max-width: 80%;
   margin: 0 auto;
   justify-content: center;
 }

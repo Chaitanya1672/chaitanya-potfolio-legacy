@@ -1,4 +1,4 @@
-import { Projects, FrontEndImages, BackEndImages, Others, ProfessionalProjects, projectsToShow as prjShowCount, profProjectsToShow as profPrjShowCount, prjIncreaseByCount } from "./constants.js";
+import { Projects, FrontEndImages, BackEndImages, Others, ProfessionalProjects, projectsToShow as prjShowCount, profProjectsToShow as profPrjShowCount, prjIncreaseByCount, companyExperience } from "./constants.js";
 
 const projectsContainer = document.getElementById("projectsContainer");
 const profProjectsContainer = document.getElementById("prof-projectsContainer");
@@ -6,17 +6,73 @@ const frontEndLngLogos = document.querySelector(".front-end");
 const backEndLngLogos = document.querySelector(".back-end");
 const otherTechnologiesLogos = document.querySelector(".others");
 const form = document.getElementById('myForm');
+const companyExperienceContainer = document.getElementById('experience');
 
 const loadMoreButton = document.querySelector('#load-more-button')
 const showLessButton = document.querySelector('#show-less-button')
 let projectsToShow = prjShowCount;
-let profProjectsToShow = profPrjShowCount;
+// let profProjectsToShow = profPrjShowCount;
 
 Projects.slice(0, projectsToShow).forEach((project) => {
   if (projectsToShow >= Projects.length) loadMoreButton.style.display = "none"
   const projectCard = createProjectCard(project);
   projectsContainer.appendChild(projectCard);
 });
+
+function generateExperienceHTML(experienceItems) {
+
+  const container = document.createElement("div");
+  container.classList.add("experience-container");
+
+  const title = document.createElement("h2");
+  title.classList.add("section-title");
+  title.textContent = "Experience";
+
+  container.appendChild(title);
+
+  experienceItems.forEach(item => {
+    const itemDiv = document.createElement("div");
+    itemDiv.classList.add("experience-item");
+
+    const itemTitle = document.createElement("h3");
+    itemTitle.classList.add("experience-title");
+    itemTitle.textContent = item.title;
+
+    const companyLink = document.createElement("a");
+    companyLink.href = item.companyLink;
+    companyLink.target = "_blank";
+    companyLink.textContent = `${item.company}`;
+
+    const companyPara = document.createElement("p");
+    companyPara.classList.add("experience-company");
+    companyPara.appendChild(companyLink);
+
+    const datePara = document.createElement("p");
+    datePara.classList.add("experience-date");
+    datePara.textContent = item.date;
+
+    const highlightsList = document.createElement("ul");
+    highlightsList.classList.add("experience-highlights");
+
+    item.highlights.forEach(highlight => {
+      const highlightItem = document.createElement("li");
+      highlightItem.textContent = highlight;
+      highlightsList.appendChild(highlightItem);
+    });
+
+    itemDiv.appendChild(itemTitle);
+    itemDiv.appendChild(companyPara);
+    itemDiv.appendChild(datePara);
+    itemDiv.appendChild(highlightsList);
+
+    container.appendChild(itemDiv);
+  });
+
+  companyExperienceContainer.appendChild(container);
+
+  return companyExperienceContainer;
+}
+generateExperienceHTML(companyExperience);
 
 
 // Commented for time being
