@@ -10,6 +10,7 @@ const companyExperienceContainer = document.getElementById('experience');
 
 const loadMoreButton = document.querySelector('#load-more-button')
 const showLessButton = document.querySelector('#show-less-button')
+const upArrowButton = document.querySelector('#up-arrow-btn')
 let projectsToShow = prjShowCount;
 // let profProjectsToShow = profPrjShowCount;
 
@@ -99,6 +100,13 @@ showLessButton.addEventListener("click", () => {
   }
   renderProjects();
 });
+
+upArrowButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+})
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();

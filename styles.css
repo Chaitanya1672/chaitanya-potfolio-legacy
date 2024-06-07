@@ -23,8 +23,12 @@ body {
 }
 
 .main-section {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .navbar {
@@ -83,6 +87,7 @@ body {
   border: none;
   max-width: 80%;
   margin: 0 auto;
+  height: 90%;
 }
 
 .mainDetails {
@@ -119,6 +124,10 @@ body {
   opacity: 0;
   transform: translateX(100%);
   animation: slide 1s ease-out forwards;
+}
+
+section {
+  min-height: 100%;
 }
 
 @keyframes slide {
@@ -309,7 +318,6 @@ a {
 
 .experience-company,
 .experience-date {
-  
   color: #888;
   margin-bottom: 5px;
 }
@@ -317,7 +325,7 @@ a {
   color: #fff;
 }
 .experience-highlights {
-  list-style: none;
+  /* list-style: none; */
   padding-left: 20px;
   margin-bottom: 0;
 }
@@ -528,6 +536,35 @@ button:hover {
   }
 }
 
+/* Up Arrow Icon */
+.up-arrow-btn {
+  position: relative;
+  
+}
+
+.up-arrow {
+  /* position: absolute; */
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.up-arrow path {
+  stroke: #ffffff;
+}
+
+.up-arrow-btn:hover {
+  filter: none; /* Remove default hover effect */
+}
+
+/* Style to remove default hover effect */
+.up-arrow-btn:hover, .up-arrow path {
+  filter: none; /* Remove default hover effect */
+  stroke: #4caf50; /* Change to your desired color */
+  
+}
 @media screen and (min-width: 401px) and (max-width: 709px) {
   .mainDetails {
     order: 2;
