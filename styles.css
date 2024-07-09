@@ -138,8 +138,7 @@ section {
 }
 
 #dynamic-text,
-.intro-skills
-{
+.intro-skills {
   color: #4caf50;
 }
 
@@ -259,7 +258,7 @@ section {
   height: 40px;
 }
 
-hr{
+hr {
   width: 20%;
   margin: 0.5rem 0;
   opacity: 1;
@@ -285,6 +284,8 @@ hr{
   align-items: flex-start;
 }
 .experience-container {
+  width: 80%;
+  margin: auto;
   font-size: 1.1em;
 }
 
@@ -537,33 +538,37 @@ button:hover {
 }
 
 /* Up Arrow Icon */
-.up-arrow-btn {
-  position: relative;
-  
-}
 
 .up-arrow {
   /* position: absolute; */
   position: fixed;
   bottom: 3rem;
   right: 3rem;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
+  /* transform: translateX(-50%); */
   cursor: pointer;
+  height: 3rem;
+  background-color: #4caf50;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 .up-arrow path {
   stroke: #ffffff;
 }
 
+.up-arrow:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
 .up-arrow-btn:hover {
-  filter: none; /* Remove default hover effect */
+  filter: none;
 }
 
 /* Style to remove default hover effect */
-.up-arrow-btn:hover, .up-arrow path {
-  filter: none; /* Remove default hover effect */
-  stroke: #4caf50; /* Change to your desired color */
-  
+.up-arrow-btn:hover,
+.up-arrow path {
+  filter: none;
+  stroke: #4caf50;
 }
 @media screen and (min-width: 401px) and (max-width: 709px) {
   .mainDetails {

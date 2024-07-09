@@ -1,27 +1,36 @@
-import { Projects, FrontEndImages, BackEndImages, Others, ProfessionalProjects, projectsToShow as prjShowCount, profProjectsToShow as profPrjShowCount, prjIncreaseByCount, companyExperience } from "./constants.js";
+import {
+  Projects,
+  FrontEndImages,
+  BackEndImages,
+  Others,
+  ProfessionalProjects,
+  projectsToShow as prjShowCount,
+  profProjectsToShow as profPrjShowCount,
+  prjIncreaseByCount,
+  companyExperience,
+} from "./constants.js";
 
 const projectsContainer = document.getElementById("projectsContainer");
 const profProjectsContainer = document.getElementById("prof-projectsContainer");
 const frontEndLngLogos = document.querySelector(".front-end");
 const backEndLngLogos = document.querySelector(".back-end");
 const otherTechnologiesLogos = document.querySelector(".others");
-const form = document.getElementById('myForm');
-const companyExperienceContainer = document.getElementById('experience');
+const form = document.getElementById("myForm");
+const companyExperienceContainer = document.getElementById("experience");
 
-const loadMoreButton = document.querySelector('#load-more-button')
-const showLessButton = document.querySelector('#show-less-button')
-const upArrowButton = document.querySelector('#up-arrow-btn')
+const loadMoreButton = document.querySelector("#load-more-button");
+const showLessButton = document.querySelector("#show-less-button");
+const upArrowButton = document.querySelector("#up-arrow-btn");
 let projectsToShow = prjShowCount;
 // let profProjectsToShow = profPrjShowCount;
 
 Projects.slice(0, projectsToShow).forEach((project) => {
-  if (projectsToShow >= Projects.length) loadMoreButton.style.display = "none"
+  if (projectsToShow >= Projects.length) loadMoreButton.style.display = "none";
   const projectCard = createProjectCard(project);
   projectsContainer.appendChild(projectCard);
 });
 
 function generateExperienceHTML(experienceItems) {
-
   const container = document.createElement("div");
   container.classList.add("experience-container");
 
@@ -29,9 +38,7 @@ function generateExperienceHTML(experienceItems) {
   title.classList.add("section-title");
   title.textContent = "Experience";
 
-  container.appendChild(title);
-
-  experienceItems.forEach(item => {
+  experienceItems.forEach((item) => {
     const itemDiv = document.createElement("div");
     itemDiv.classList.add("experience-item");
 
@@ -55,7 +62,7 @@ function generateExperienceHTML(experienceItems) {
     const highlightsList = document.createElement("ul");
     highlightsList.classList.add("experience-highlights");
 
-    item.highlights.forEach(highlight => {
+    item.highlights.forEach((highlight) => {
       const highlightItem = document.createElement("li");
       highlightItem.textContent = highlight;
       highlightsList.appendChild(highlightItem);
@@ -69,12 +76,12 @@ function generateExperienceHTML(experienceItems) {
     container.appendChild(itemDiv);
   });
 
+  companyExperienceContainer.appendChild(title);
   companyExperienceContainer.appendChild(container);
 
   return companyExperienceContainer;
 }
 generateExperienceHTML(companyExperience);
-
 
 // Commented for time being
 // ProfessionalProjects.slice(0, profProjectsToShow).forEach((project) => {
@@ -86,8 +93,8 @@ generateExperienceHTML(companyExperience);
 loadMoreButton.addEventListener("click", () => {
   projectsToShow += prjIncreaseByCount;
   if (projectsToShow >= Projects.length) {
-    loadMoreButton.style.display = "none"
-    showLessButton.style.display = "block"
+    loadMoreButton.style.display = "none";
+    showLessButton.style.display = "block";
   }
   renderProjects();
 });
@@ -95,8 +102,8 @@ loadMoreButton.addEventListener("click", () => {
 showLessButton.addEventListener("click", () => {
   projectsToShow = prjShowCount;
   if (projectsToShow <= 6) {
-    loadMoreButton.style.display = "block"
-    showLessButton.style.display = "none"
+    loadMoreButton.style.display = "block";
+    showLessButton.style.display = "none";
   }
   renderProjects();
 });
@@ -104,34 +111,34 @@ showLessButton.addEventListener("click", () => {
 upArrowButton.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
-    behavior: "smooth"
+    behavior: "smooth",
   });
-})
+});
 
-form.addEventListener('submit', function(event) {
+form.addEventListener("submit", function (event) {
   event.preventDefault();
   const formData = new FormData(form);
   fetch(form.action, {
-    method: 'POST',
+    method: "POST",
     body: formData,
     headers: {
-      'Accept': 'application/json'
-    }
+      Accept: "application/json",
+    },
   })
-  .then(response => response.json())
-  .then(data => {
-    form.reset();
-    alert("Thank you for contacting me, I will surely get back to you")
-  })
-  .catch(error => {
-    alert('Something went wrong, please fill the form again!')
-    console.error('Form submission error:', error);
-  });
+    .then((response) => response.json())
+    .then((data) => {
+      form.reset();
+      alert("Thank you for contacting me, I will surely get back to you");
+    })
+    .catch((error) => {
+      alert("Something went wrong, please fill the form again!");
+      console.error("Form submission error:", error);
+    });
 });
 
 function createProjectCard(project, isProfProject) {
   const projectDiv = document.createElement("div");
-  if(isProfProject) projectDiv.classList.add("profProject");
+  if (isProfProject) projectDiv.classList.add("profProject");
   else projectDiv.classList.add("project");
 
   const image = document.createElement("img");
@@ -144,10 +151,10 @@ function createProjectCard(project, isProfProject) {
 
   if (isProfProject) {
     const description = document.createElement("div");
-    const descSpan = document.createElement('span')
-    descSpan.classList.add("small-description")
-    descSpan.textContent = project.description
-    description.append(descSpan)
+    const descSpan = document.createElement("span");
+    descSpan.classList.add("small-description");
+    descSpan.textContent = project.description;
+    description.append(descSpan);
     if (project.role) {
       description.innerHTML += "<br><br>Role: " + project.role;
     }
@@ -162,27 +169,25 @@ function createProjectCard(project, isProfProject) {
     const githubButton = createButton("Github", project.githubLink);
     const liveDemoButton = createButton("Live Demo", project.liveDemoLink);
     buttonsContainer.append(githubButton, liveDemoButton);
-  
     projectDiv.append(image, title, buttonsContainer);
   }
-
 
   return projectDiv;
 }
 
 function createButton(label, link) {
   const button = document.createElement("button");
-  button.classList.add(label.toLowerCase().replace(/\s/g, '-'));
+  button.classList.add(label.toLowerCase().replace(/\s/g, "-"));
 
   const anchor = document.createElement("a");
   anchor.href = link;
-  anchor.target = "_blank"
+  anchor.target = "_blank";
 
   const icon = document.createElement("i");
-  if(label.toLowerCase().replace(/\s/g, '-') === "github"){
-    icon.classList.add("fa-brands", "fa-github", 'project-icon');
-  }else {
-    icon.classList.add( "fa-solid", "fa-link", "project-icon");
+  if (label.toLowerCase().replace(/\s/g, "-") === "github") {
+    icon.classList.add("fa-brands", "fa-github", "project-icon");
+  } else {
+    icon.classList.add("fa-solid", "fa-link", "project-icon");
   }
 
   const buttonText = document.createTextNode(label);
@@ -200,7 +205,7 @@ function renderProjects() {
   });
 }
 
-FrontEndImages.forEach(imageName => {
+FrontEndImages.forEach((imageName) => {
   const img = document.createElement("img");
   img.src = `Images/skills/${imageName}`;
   img.alt = imageName.replace(/\.(png|webp|svg)$/, "");
@@ -208,7 +213,7 @@ FrontEndImages.forEach(imageName => {
   frontEndLngLogos.appendChild(img);
 });
 
-BackEndImages.forEach(imageName => {
+BackEndImages.forEach((imageName) => {
   const img = document.createElement("img");
   img.src = `Images/skills/${imageName}`;
   img.alt = imageName.replace(/\.(png|webp|svg)$/, "");
@@ -216,7 +221,7 @@ BackEndImages.forEach(imageName => {
   backEndLngLogos.appendChild(img);
 });
 
-Others.forEach(imageName => {
+Others.forEach((imageName) => {
   const img = document.createElement("img");
   img.src = `Images/skills/${imageName}`;
   img.alt = imageName.replace(/\.(png|webp|svg)$/, "");
