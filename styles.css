@@ -502,39 +502,28 @@ button:hover {
 .mainImg {
   min-width: 250px;
 }
+.open-source-header {
+  text-align: center;
+}
+.open-source {
+  position: relative;
+  margin: 0 5px;
+  text-align: center;
+}
 
-/* Media query for mobile devices (max-width: 400px) */
+.link-arrow {
+  width: 25px;
+  height: 25px;
+}
 
-@media screen and (max-width: 400px) {
-  .nav-link:before :hover {
-    width: 20%;
-  }
-  .mainDetails h1 {
-    font-size: 1.7rem;
-  }
-  .mainDetails {
-    margin-top: 0;
-    order: 2;
-    flex: 0 0 100%;
-  }
-  .mainContainer {
-    width: 90%;
-    margin-top: 20px;
-  }
-  .static-text,
-  #dynamic-text {
-    font-size: 1rem;
-  }
-  .mainDetails {
-    text-align: center;
-    background-color: #ffffff29;
-  }
-  .mainDetails .intro-text p {
-    font-size: 13px;
-  }
-  .project {
-    margin-bottom: 90px;
-  }
+.open-source {
+  position: relative;
+  margin: 0 5px;
+}
+
+.open-source:hover {
+  color: #4caf50;
+  width: 85%;
 }
 
 /* Up Arrow Icon */
@@ -570,13 +559,81 @@ button:hover {
   filter: none;
   stroke: #4caf50;
 }
-@media screen and (min-width: 401px) and (max-width: 709px) {
+/* Media query for mobile devices (max-width: 400px) */
+
+@media screen and (max-width: 400px) {
+  .nav-link:before :hover {
+    width: 20%;
+  }
+  .mainDetails h1 {
+    font-size: 1.7rem;
+  }
   .mainDetails {
+    margin-top: 0;
     order: 2;
-    background-color: #ffffff29;
+    flex: 0 0 100%;
   }
   .mainContainer {
-    flex-wrap: wrap;
+    width: 90%;
+    margin-top: 0;
+  }
+  .static-text,
+  #dynamic-text {
+    font-size: 1rem;
+  }
+  .mainDetails {
+    text-align: center;
+    background-color: #ffffff29;
+  }
+  .mainDetails .intro-text p {
+    font-size: 13px;
+  }
+  .project {
+    margin-bottom: 35px;
+  }
+  .main-section {
+    margin-top: 0;
+  }
+  .skills {
+    padding: 0;
+  }
+  .experience {
+    width: 90%;
+  }
+  .up-arrow {
+    display: none;  
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 709px) {
+  .mainDetails {
+    margin-top: 0;
+    order: 2;
+    background-color: #ffffff29;
+    flex: 0 0 100%;
+  }
+  .mainContainer {
+    width: 90%;
+    margin-top: 0;
+  }
+  .navbar-brand img {
+    height: 40px;
+    width: 80%;
+  }
+  .up-arrow {
+    /* display: none;   */
+    height: 1.5rem;
+    bottom: 2rem;
+    right: 2rem;
+  }
+  .experience {
+    width: 90%;
+  }
+  .main-section {
+    margin-top: 0;
+  }
+  .skills {
+    padding: 0;
   }
 }
 
@@ -610,6 +667,9 @@ button:hover {
 
 @media screen and (min-width: 1024px) {
   .nav-link:hover::before {
+    width: 80%;
+  }
+  .open-source:hover::before {
     width: 80%;
   }
 }
