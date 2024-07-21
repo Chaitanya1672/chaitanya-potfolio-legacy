@@ -61,10 +61,12 @@ function generateExperienceHTML(experienceItems) {
 
     const highlightsList = document.createElement("ul");
     highlightsList.classList.add("experience-highlights");
+    highlightsList.style.marginBottom = "15px"
 
     item.highlights.forEach((highlight) => {
       const highlightItem = document.createElement("li");
       highlightItem.textContent = highlight;
+      highlightItem.style.fontSize = "larger"
       highlightsList.appendChild(highlightItem);
     });
 

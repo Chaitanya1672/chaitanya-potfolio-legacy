@@ -152,7 +152,10 @@ export const companyExperience = [
     date: "Aug 22 - Current",
     highlights: [
       "Utilized React and Next.js to design responsive and intuitive user interfaces, contributing to a 40% increase in user traffic.",
+      "Implemented robust backend services using Node.js and Express, deployed on Amazon EC2 instances, improving system reliability by 30%.",
       "Played a key role in creating seamless, high-performance applications, leading to a significant boost in user engagement and satisfaction.",
+      "Orchestrated efficient content delivery by integrating Amazon S3 with cloudfront for static asset storage, resulting in a 25% reduction in page load times.",
+      // "Developed and maintained RESTful APIs, facilitating seamless communication between frontend and backend systems.",
     ],
   },
   {
@@ -162,7 +165,9 @@ export const companyExperience = [
     date: "Dec 21 - Jul 22",
     highlights: [
       "Developed and maintained responsive web applications using HTML, CSS, and JavaScript, React.",
+      "Collaborated with senior developers to implement new features and fix bugs, improving overall application performance.",
       "Acquired exposure to various web development frameworks and tools, expanding technical skills.",
+      // "Conducted testing and debugging of web applications to ensure functionality and performance across different browsers.",
     ],
   },
 ];
