@@ -21,6 +21,8 @@ const companyExperienceContainer = document.getElementById("experience");
 const loadMoreButton = document.querySelector("#load-more-button");
 const showLessButton = document.querySelector("#show-less-button");
 const upArrowButton = document.querySelector("#up-arrow-btn");
+const submitButton = document.querySelector("#submit-btn");
+
 let projectsToShow = prjShowCount;
 // let profProjectsToShow = profPrjShowCount;
 
@@ -120,6 +122,10 @@ upArrowButton.addEventListener("click", () => {
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   const formData = new FormData(form);
+
+  submitButton.innerText = 'Sending...';
+  submitButton.disabled = true;
+
   fetch(form.action, {
     method: "POST",
     body: formData,
@@ -135,7 +141,11 @@ form.addEventListener("submit", function (event) {
     .catch((error) => {
       alert("Something went wrong, please fill the form again!");
       console.error("Form submission error:", error);
-    });
+    })
+    .finally(() => {
+      submitButton.disabled = false;
+      submitButton.innerText = 'Send Message';
+    })
 });
 
 function createProjectCard(project, isProfProject) {
