@@ -93,7 +93,7 @@ export const ProfessionalProjects = [
   {
     title: "ECamp Project",
     imageSrc: "Images/professional/ecamp-project-preview.jpg",
-    description: ` Next.js and Nest.js-based Content Management System (CMS). Built 
+    description: `Next.js and Nest.js-based Content Management System (CMS). Built 
     with Redux Toolkit & MUI, it empowers administrators to efficiently manage data across 
     multiple screens, facilitating seamless CRUD operations.`,
     role: "Next + Nest Developer",
@@ -152,29 +152,29 @@ export const Others = [
 
 export const companyExperience = [
   {
+    title: "Software Engineer II",
+    company: "HERE Technologies",
+    companyLink: "https://www.here.com/",
+    date: "November 2024 - Present",
+    highlights: [
+      "Developed interactive and user-friendly interfaces using Angular and Three.js, enhancing stakeholder experience with location mapping tools on HERE Maps.",
+      "Built scalable backend solutions with Java Spring Boot, ensuring robust performance and seamless integration with frontend systems.",
+      "Integrated Swagger UI for API documentation, improving developer productivity and streamlining backend development.",
+      // "Optimized geospatial data handling and visualization using HERE Maps APIs, enabling efficient location-based services.",
+      "Contributed to the development and maintenance of internal tools, enhancing operational efficiency and team collaboration."
+    ],
+  },
+  {
     title: "Associate Software Engineer",
     company: "NeoSOFT Technologies",
     companyLink: "https://www.neosofttech.com/",
-    date: "August 22 - Present",
+    date: "August 22 - November 2024",
     highlights: [
-      "Utilized React and Next.js to design responsive and intuitive user interfaces, contributing to a 40% increase in user traffic.",
-      "Implemented robust backend services using Node.js and Express, deployed on Amazon EC2 instances, improving system reliability by 30%.",
-      "Integrated caching mechanisms like Redis and browser caching strategies to enhance application performance and reduce backend load by 30%.",
-      "Played a key role in creating seamless, high-performance applications, leading to a significant boost in user engagement and satisfaction.",
-      "Orchestrated efficient content delivery by integrating Amazon S3 with cloudfront for static asset storage, resulting in a 25% reduction in page load times.",
-      "Developed and maintained RESTful APIs, facilitating seamless communication between frontend and backend systems.",
+      "Designed responsive user interfaces with React and Next.js, boosting user traffic by 40%.",
+      "Built robust backend services using Node.js and Express, improving reliability by 30%.",
+      "Enhanced application performance, driving user engagement and satisfaction.",
+      "Streamlined content delivery with Amazon S3 and CloudFront, reducing page load times by 25%.",
+      "Developed and maintained RESTful APIs for seamless frontend-backend communication."
     ],
   },
-  // {
-  //   title: "Software Engineer Intern",
-  //   company: "NeoSOFT Technologies",
-  //   companyLink: "https://www.neosofttech.com/",
-  //   date: "Dec 21 - Jul 22",
-  //   highlights: [
-  //     "Developed and maintained responsive web applications using HTML, CSS, and JavaScript, React.",
-  //     "Collaborated with senior developers to implement new features and fix bugs, improving overall application performance.",
-  //     "Acquired exposure to various web development frameworks and tools, expanding technical skills.",
-  //     // "Conducted testing and debugging of web applications to ensure functionality and performance across different browsers.",
-  //   ],
-  // },
 ];

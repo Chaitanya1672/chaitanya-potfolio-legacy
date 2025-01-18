@@ -23,12 +23,9 @@ body {
 }
 
 .main-section {
-  /* margin-top: 20px; */
-  height: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 2rem;
 }
 
 .navbar {
@@ -86,8 +83,7 @@ body {
   flex-wrap: wrap;
   border: none;
   max-width: 80%;
-  margin: 0 auto;
-  height: 90%;
+  margin: auto;
 }
 
 .mainDetails {
@@ -98,7 +94,7 @@ body {
   margin: 20px;
   padding: 20px;
   text-align: left;
-  max-width: 500px;
+  max-width: 100%;
   transform: translateX(-100%);
   animation: slide 1s ease-out forwards;
 }
@@ -334,6 +330,7 @@ a {
 
 .experience-highlights li {
   margin-bottom: 5px;
+  font-size: 16px !important;
 }
 
 /*----------------------------------------- Projects Section -----------------------------------*/
@@ -443,8 +440,13 @@ a {
   padding: 20px;
 }
 
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
 .contact h2 {
-  font-size: 2em;
+  font-size: 16px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -507,9 +509,14 @@ button:hover {
   text-align: center;
 }
 .open-source {
+  display: block;
   position: relative;
   margin: 0 5px;
   text-align: center;
+}
+
+.open-source h4 {
+  font-size: 16px;
 }
 
 .link-arrow {
@@ -518,13 +525,11 @@ button:hover {
 }
 
 .open-source {
-  position: relative;
   margin: 0 5px;
 }
 
 .open-source:hover {
   color: #4caf50;
-  width: 85%;
 }
 
 /* Up Arrow Icon */
@@ -602,7 +607,7 @@ button:hover {
     width: 90%;
   }
   .up-arrow {
-    display: none;  
+    display: none;
   }
 }
 
@@ -686,7 +691,7 @@ button:hover {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgba(128, 128, 128, 0.2); 
+  background-color: rgba(128, 128, 128, 0.2);
 }
 
 /* Horizontal Scroll Bar */
@@ -695,13 +700,13 @@ button:hover {
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-  background-color: rgba(128, 128, 128, 0.6); 
+  background-color: rgba(128, 128, 128, 0.6);
   border-radius: 6px;
   border: 3px solid rgba(128, 128, 128, 0.2);
 }
 
 ::-webkit-scrollbar-track:horizontal {
-  background-color: rgba(128, 128, 128, 0.2);  
+  background-color: rgba(128, 128, 128, 0.2);
 }
 
 /* Optional: Add hover effect */
